@@ -1,0 +1,107 @@
+\documentclass{article}
+\usepackage{fontspec}
+\usepackage{xcolor}
+\usepackage{sagetex}
+
+\usepackage{euler}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{unicode-math}
+
+
+\usepackage[makeroom]{cancel}
+\usepackage{ulem}
+
+\setlength\parindent{0em}
+\setlength\parskip{0.618em}
+\usepackage[a4paper,lmargin=1in,rmargin=1in,tmargin=1in,bmargin=1in]{geometry}
+
+\setmainfont[Mapping=tex-text]{Helvetica Neue LT Std 45 Light}
+
+\newcommand\N{\mathbb{N}}
+\newcommand\Z{\mathbb{Z}}
+\newcommand\R{\mathbb{R}}
+\newcommand\C{\mathbb{C}}
+\newcommand\A{\mathbb{A}}
+
+\usepackage{soul}
+
+\begin{document}
+
+\begin{center}
+  165A --- Homework 7
+
+  Ricardo J. Acuna
+
+  (862079740)
+\end{center}\vspace{1.618em}
+
+\subsubsection*{Page 170}
+
+\paragraph{3} Let $C$ be the circle $|z| = 3$, described in the
+positive sense. Show that if$$g(z) = \int_{C} \frac{2s^2 -s -2}{s-z}
+ds\quad (|z|\neq 3),$$ then $g(2) = 8\pi i.$ What is the value of
+$g(z)$ when $|z|>3$ ?
+
+\uwave{slu. }
+
+$|2| = 2 < 3 \implies 2 \in \text{int}(C) \implies g(2) = 2\pi i
+(2(2)^2-2-2) = 2\pi i (8-4) = 8\pi i$
+
+$\forall z\in \C: |z|\neq 3 \implies s-z \neq 0 \implies \frac{2s^2 -s
+  -2}{s-z}$ is analytic on $\C \backslash \{z\in \C||z|\neq 3\}$
+
+$C$ is a closed curve and $C \subset \C\backslash \{z\in \C|\quad
+|z|\neq 3\}\quad \blacklozenge$
+
+
+\paragraph{10} Let $f$ be an entire function such that $|f(z)|\leq A
+|z|$ for all $z$, when $A$ is a fixed positive number. Show that $f(z)
+= a_1 z$, where $a_1$ is a complex constant.
+
+\uwave{slu. }
+
+$$|f^{(n)}(z)| \leq \frac{n!M_R}{R^n} \implies |f^{(2)}(z)| \leq
+\frac{2M_R}{R^2} \leq \frac{2A(|z|+R)}{R^2} \forall z\in \C$$
+
+Since $f$ is entire, then the radius $R$ where it is analytic is
+arbitrarily large. So let $R\rightarrow \infty$, gives the right hand
+side of the last inequality is zero.
+
+$$|f^{(2)}(z_0)| \leq 0 \implies f^{(2)}(z) = 0\quad \forall z\in \C
+\implies \exists a_1,a_2 \in \C : f(z) = a_1z +a_2$$
+
+But, $|f|\leq A|z|\quad \forall z\in \C \implies a_2 = 0 \implies f(z) =
+a_1z \quad \blacklozenge$
+
+
+
+\subsubsection*{Page 178}
+
+\paragraph{3} Let a function $f$ be continuous on a closed bounded
+region $R$, and let it be analytic and not constant throughout the
+interior of $R$. Assuming that $f(z)\neq 0$ anywhere in $R$, prove
+that $|f(z)|$ has a\textit{ minimum value m} in $R$ which occurs on
+the boundary of $R$ and never in the interior. Do this by applying the
+corresponding result for maximum values (Sec. 54) to the function
+$g(z) = 1/f(z).$
+
+\uwave{pf.}
+
+Note, that $\forall z\in R, f(z)\neq 0 \implies g(z) = 1/f(z)$ is
+well-defined analytic and non-constant throughout the interior of
+$R$. Then the maximum of $|g(z)|$ is always reached and it is located
+somewhere in $\partial R$, by the corollary in (Sec. 54).
+
+
+Let $m = \min |f(z)| \implies \forall z\in R,  m \leq |f(z)| \implies
+\forall z \in R, |g(z)| = \frac{1}{|f(z)|} \leq \frac{1}{m} = \max
+|g(z)|\quad \blacksquare$
+
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

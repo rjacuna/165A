@@ -1,0 +1,502 @@
+\documentclass{article}
+\usepackage{fontspec}
+\usepackage{xcolor}
+\usepackage{sagetex}
+
+\usepackage{euler}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{unicode-math}
+
+
+\usepackage[makeroom]{cancel}
+\usepackage{ulem}
+
+\setlength\parindent{0em}
+\setlength\parskip{0.618em}
+\usepackage[a4paper,lmargin=1in,rmargin=1in,tmargin=1in,bmargin=1in]{geometry}
+
+\setmainfont[Mapping=tex-text]{Helvetica Neue LT Std 45 Light}
+
+\newcommand\N{\mathbb{N}}
+\newcommand\Z{\mathbb{Z}}
+\newcommand\R{\mathbb{R}}
+\newcommand\C{\mathbb{C}}
+\newcommand\A{\mathbb{A}}
+
+\usepackage{soul}
+
+\begin{document}
+
+\begin{center}
+  165A --- Homework 2
+
+  Ricardo J. Acuna
+
+  (862079740)
+\end{center}\vspace{1.618em}
+
+\subsubsection*{Page 37}
+
+\paragraph{1} For each of the functions below, describe the domain of
+definition that is understood:
+
+(a) $f(z) = \frac{1}{1-z^2};$
+
+Rational functions are defined whenever the denominator is not zero.
+
+$1-z^2 = 0 \implies z=\pm i$, so dom$(f) = \C\backslash \{\pm i\}.$
+
+(b) $f(z) = \text{Arg}(\frac{1}{z});$
+
+For the same reasons, dom$(f) = \C\backslash \{0\}.$
+
+(c)$f(z) = \frac{z}{z-\bar{z}}$;
+
+$z-\bar{z} = 0 \implies \frac{z-\bar{z}}{2} = \Re(z) = 0.$
+
+However, $f(0)= 0$ and $\Re(0) = 0,$ so dom$(f) = \{z\in\C | z\neq 0
+  \implies \Re(z) \neq 0\}$.
+
+(d) $f(z) = \frac{1}{1-|z|^2}$;
+
+$1-|z|^2 = 0 \implies |z| = 1, $so dom$(f) = \{z \in \C|\quad |z| \neq 1\}$.
+
+\paragraph{3} Suppose that $f(z) = x^2-y^2 -2y +i(2x -2xy),$ where $z
+= x+iy$. Use the expressions (see Sec. 5)
+\[x = \frac{z+\bar{z}}{2} \text{, and } y = \frac{z-\bar{z}}{2i}\]
+
+to write $f(z)$ in terms of $z$, and simplify the result.
+
+\uwave{slu.}
+
+$f(z) = x^2-y^2 -2y +i(2x -2xy) = x^2 -y^2 -2y +2ix -2ixy,$
+
+$x^2 = \frac{z+\bar{z}}{2}^2 = \frac{z^2 +2z\bar{z} +\bar{z}^2}{4}$
+and
+$y^2 = \frac{z-\bar{z}}{2i}^2 = \frac{z^2 -2z\bar{z} +\bar{z}^2}{-4} = \frac{-z^2 +2z\bar{z} -\bar{z}^2}{4}
+$
+$\implies x^2 - y^2 = \frac{z^2 +2z\bar{z} +\bar{z}^2 -(-z^2
+  +2z\bar{z} -\bar{z}^2)}{4}$
+
+$\implies x^2 -y^2 = \frac{z^2 +\bar{z}^2}{2},$
+
+$-2y = -2\frac{z-\bar{z}}{2i} = \frac{-z+\bar{z}}{i}$ and $(\frac{i}{i}
+= 1 = i(-i) \implies \frac{1}{i} = -i)$
+
+$\implies -2y = -i(-z+\bar{z}) = iz-i\bar{z},$
+
+$2ix = 2i\frac{z+\bar{z}}{2} = iz+i\bar{z}$
+$ \implies 2ixy =
+(iz+i\bar{z})(\frac{z-\bar{z}}{2i}) = \frac{z^2-z\bar{z} +z\bar{z}
+  -\bar{z}^2}{2} = \frac{z^2 -\bar{z}^2}{2}$
+
+$\implies 2ix -2ixy = iz+i\bar{z} -\frac{z^2 -\bar{z}^2}{2}.$
+
+$\implies f(z) = \frac{z^2 +\bar{z}^2}{2} +iz -i\bar{z} + iz+i\bar{z}
+-\frac{z^2 -\bar{z}^2}{2}. $
+
+$\implies f(z) = \bar{z}^2 +2iz\quad $ $\lozenge$
+\newpage
+\paragraph{4} Write the function
+
+\[f(z) = z + \frac{1}{z} \quad (z\neq 0)\]
+
+in the form $f(z) = u(r,\theta) +iv(r,\theta).$
+
+\uwave{slu.}
+
+Let $z = r(\cos{\theta} +i\sin{\theta}),$
+
+$\implies \frac{1}{z} = \frac{1}{r(\cos{\theta}
+  +i\sin{\theta})}\frac{\cos{\theta} -i\sin{\theta}}{\cos{\theta}
+  -i\sin{\theta}} =  \frac{\cos{\theta}
+  -i\sin{\theta}}{r(\cos^2{\theta} +\sin^2{\theta})} =\frac{\cos{\theta}
+  -i\sin{\theta}}{r}$
+
+$\implies z +\frac{1}{z} = r(\cos{\theta} +i\sin{\theta}) + \frac{\cos{\theta}
+  -i\sin{\theta}}{r} =
+(r+\frac{1}{r})\cos{\theta}+i(r-\frac{1}{r})\sin{\theta}$$\lozenge$
+
+\subsubsection*{Page 44}
+
+\paragraph{3} Sketch the region onto which the sector $r\leq 1, 0\leq
+\theta \leq \pi/4$ is mapped by the transformation (a) $w = z^2$;(b)
+$w= z^3$; (c) $w = z^4$.
+
+\uwave{slu.}
+\begin{sagesilent}
+  from sage.plot.disk import disk
+  s = disk((0.0,0.0), 1, (0, pi/4), color='teal')
+  a = disk((0.0,0.0), 1, (0, pi/2), color='yellow')
+  b = disk((0.0,0.0), 1, (0, 3*pi/4), color='orange')
+  c = disk((0.0,0.0), 1, (0, pi), color='red')
+\end{sagesilent}
+
+$\sageplot[scale = 0.5]{s}$
+
+under $z^2$ the region maps to $\sageplot[scale = 0.5]{a}$
+
+under $z^3$ the region maps to $\sageplot[scale = 0.5]{b}$
+
+under $z^4$ the region maps to $\sageplot[scale = 0.5]{c}$
+
+\paragraph{4} Show that the lines $ay = x (a \neq 0)$ are mapped onto the spirals $ρ = \exp(aφ)$ under
+the transformation $w = \exp z$, where  $w = ρ \exp(iφ)$.
+
+\uwave{slu.}
+
+\begin{sagesilent}
+  from sage.plot.line import line
+  l1 = line([(-1.1,-1.1), (1.1,1.1)])
+  l2 = line([(-1.1/2,-1.1), (1.1/2,1.1)], color='green')
+  l3 = line([(-1.1*-2,-1.1), (1.1*-2,1.1)], color='orange')
+  from sage.plot.plot import parametric_plot
+  def spiral (a, c):
+      t = var('t')
+      x = exp(abs(t)*sqrt(a^2+1)*cos(atan(1/a)))*cos(abs(t)*sqrt(a^2+1)*sin(atan(1/a)))
+      y = exp(abs(t)*sqrt(a^2+1)*cos(atan(1/a)))*sin(abs(t)*sqrt(a^2+1)*sin(atan(1/a)))
+      return parametric_plot((x,y),(t,-20,20),color = c)
+
+  s1 = spiral(1,'blue')
+  s2 = spiral(1/2,'green')
+  s3 = spiral(-2,'orange')
+\end{sagesilent}
+
+
+  Let $z = x +iy$.
+
+  $ay = x \implies z = ay + iy$
+
+  $\implies |z| = \sqrt{a^2y^2+y^2} = |y|\sqrt{a^2+1}$.
+
+  $\implies \gamma := \sqrt{a^2 + 1}$ is fixed.
+
+  and
+
+  $x = ay $
+
+  $\implies$
+
+  $ \phi := \text{atan}{(y/ay)} = \text{atan}{(1/a)}.$
+
+  $\implies \phi$ is fixed.
+
+  $\implies z = |y|\gamma\cos(\phi) +i |y|\gamma\sin(\phi)$
+
+
+
+
+$w = \exp (z) = \exp(|y|\gamma\cos(\phi) +i |y|\gamma\sin(\phi)) =$
+
+$
+\exp(|y|\gamma\cos(\phi))\exp(i|y|\gamma\sin(\phi)) =$
+
+$
+  \exp(|y|\gamma\cos(\phi))(\cos(|y|\gamma\sin(\phi))
+  +i\sin(|y|\gamma\sin(\phi)))=$
+
+  $
+  \exp(|y|\sqrt{a^2 + 1}\cos(\text{atan}{(1/a)}))(\cos(|y|\sqrt{a^2 + 1}\sin(\text{atan}{(1/a)})) +i\sin(|y|\sqrt{a^2+1}\sin(\text{atan}{(1/a)})))$
+
+\begin{minipage}{0.39\textwidth}
+$\sageplot[scale = 0.38]{l1+l2+l3}$
+\end{minipage}
+\begin{minipage}{0.39\textwidth}
+$\sageplot[scale = 0.38]{s1}$
+\end{minipage}
+
+\begin{minipage}{0.39\textwidth}
+$\sageplot[scale = 0.38]{s2}$
+\end{minipage}
+\begin{minipage}{0.39\textwidth}
+$\sageplot[scale = 0.38]{s3}$
+\end{minipage}
+
+They are spirals because as $|y|\rightarrow 0$, $\exp(A|y|)
+\rightarrow 1,\forall A$ constants. But, it does go through all of the
+angles, because cos and sin are cyclic over the positive reals.
+
+\paragraph{7} Find the image of the semi-infinite strip  $x\geq 0$,
+$0\leq y < \pi$, under the trasformation $w = \exp z$.
+
+
+
+\begin{sagesilent}
+  from sage.plot.contour_plot import region_plot
+  x,y = var('x,y')
+  s7 = region_plot((x>= 0, 0<=y,y<pi),(x,-1.0,20.0),(y,-1.0,3.2))
+  s8 = region_plot((y>0, x^2+y^2>=1), (x,-5.0,5.0),(y,0.0,1.2))
+
+  from sage.plot.plot import parametric_plot
+  t = var('t')
+  e7 = parametric_plot((exp(0)*cos(t),exp(0)*sin(t)), (t, 0,pi))
+  e8 = parametric_plot((exp(1/2)*cos(t),exp(1/2)*sin(t)), (t, 0,pi))
+  e9 = parametric_plot((exp(1/4)*cos(t),exp(1/4)*sin(t)), (t, 0,pi))
+  e10 = parametric_plot((exp(10)*cos(t),exp(10)*sin(t)), (t, 0,pi))
+\end{sagesilent}
+$\sageplot{s7}$
+
+Let $z = x+iy \implies w = \exp(z) = \exp(x+iy) = \exp(x)\exp(iy)$
+
+$x \geq 0 \implies$ the radius $\rho = \exp(x)$ of $w$ is increasing,
+and $\rho \geq 1$.
+
+$0\leq y <\pi \implies$ the angle of $w$ runs from $0$ to $\pi$, not
+including $\pi.$
+
+We can compute the following to see the pattern.
+
+$\sageplot[scale = 0.1]{e7}$:  $\rho = 1$,
+$\sageplot[scale = 0.1]{e10}$: $\rho = \exp(10)$,
+$\sageplot[scale = 0.1]{e8}$: $\rho = \exp(1/2)$,
+$\sageplot[scale = 0.1]{e9}$: $\rho = \exp(1/4)$.
+
+So, the map wraps the semi-infinite strip into the upper half-plane,
+minus the open unit circle. And not including the ray that starts from
+$-1+0i$ along the $x-$axis to $-\infty + 0i.$
+
+$\sageplot[scale = 0.5]{s8}$
+\newpage
+\paragraph{8} One interpretation of a function $w = f(z) = u(x,y) + iv(x,y)$ is that of a vector field
+in the domain of definition of $f$. The function assigns a vector $w$, with components
+$u(x, y)$ and $v(x, y)$, to each point $z$ at which it is defined. Indicate graphically the
+vector fields represented by (a) $w = iz$; (b) $w = z/|z|$.
+
+(a) First we want to express $w = u +iv$.
+
+$z = x+iy $ and $  w = iz \implies w = ix +i^2y = -y + ix \implies u =
+-y$ and $v = x$.
+
+\begin{sagesilent}
+  x,y = var('x,y')
+  v1 = sage.plot.plot_field.plot_vector_field((-y,x),
+  (x,-5,5),(y,-5,5))
+  v2 = sage.plot.plot_field.plot_vector_field((x/(x^2+y^2),y/(x^2+y^2)), (x,-5,5),(y,-5,5))
+\end{sagesilent}
+
+$\sageplot[scale = 0.75]{v1}$
+
+(b) First we want to express $w = u +iv$.
+
+$z = x+iy $ and $  w = z/|z| \implies w = (x +iy)/(x^2+y^2) = \frac{x}{x^2+y^2} + i\frac{y}{x^2+y^2} \implies u =
+\frac{x}{x^2+y^2}$ and $v = \frac{y}{x^2+y^2}$.
+$\sageplot[scale = 0.75]{v2}$
+\newpage
+
+\subsubsection*{Page 55}
+\paragraph{1} Use definition (2), Sec. 15, of limit to prove that
+
+(a) $\lim_{z\rightarrow z_0} \Re(z) = \Re(z_0)$;
+
+\uwave{slu.}
+
+WTS $\forall \epsilon > 0: \exists \delta > 0: |z-z_0|<\delta \implies
+|\Re(z) - \Re(z_0)| < \epsilon$
+
+$|\Re(z) - \Re(z_0)| < \epsilon \iff |\frac{z+\bar{z}}{2} - \frac{z_0
+  \bar{z_0}}{2}| < \epsilon \iff |z + \bar{z} - z_0
+  - \bar{z_0}|/2 <\epsilon \iff |z - z_0 +\bar{z} -
+  \bar{z_0}| < 2\epsilon$
+  $\iff  |z-z_0 +\bar{z}-\bar{z_0}| < |z-z_0| + |\bar{z} -
+  \bar{z_0}| = \epsilon.$
+
+  Now, $|\bar{z} -\bar{z_0}| = |\bar{z -z_0}| = |z-z_0|,$ so all of
+  the above is if and only if, $|\Re(z)-\Re(z_0)|< 2|z-z_0| < 2\delta
+  = 2\epsilon$.
+
+  Put $\delta = \epsilon$.
+  So, that shows it. $\square$
+
+  (b) $\lim_{z\rightarrow z_0} \bar{z} = \bar{z_0}$;
+
+  \uwave{slu.}
+
+  WTS $\forall \epsilon > 0:\exists \delta > 0: |z-z_0|< \delta
+  \implies |\bar{z} - \bar{z_0}|<\epsilon$.
+
+  Put $z = x + i y$, and $z_0 = x_0 + i y_0$
+
+  $|\bar{z} - \bar{z_0}|<\epsilon \iff |x-iy - (x_0 -iy_0)|<\epsilon
+  $
+
+  $\iff |x-x_0 -iy+iy_0|<|x-x_0|+|i(-y+y_0)| = |x-x_0|+|i||y_0-y| =
+  |x-x_0| +|y-y_0|= \epsilon$.
+
+$|z-z_0|= |x+iy-x_0-iy_0| < |x-x_0|+|i(y-y_0)| =
+|x-x_0|+|y-y_0|<\delta$
+
+Put $\delta = \epsilon$, and we are done!
+  $\square$
+
+(c) $\lim_{z\rightarrow 0} \frac{\bar{z}^2}{z} = 0$;
+
+\uwave{slu.}
+
+WTS $\forall \epsilon > 0:\exists \delta > 0: |z-0|< \delta
+\implies |\frac{\bar{z}^2}{z} - 0|<\epsilon$.
+
+$|\frac{\bar{z}^2}{z} - 0|<\epsilon \iff |\frac{\bar{z}^2}{z}| =
+\frac{|\bar{z}^2|}{|z|} =\frac{|\bar{z^2}|}{|z|} = \frac{|z^2|}{|z|} =
+\frac{|z|^2}{|z|} = |z|<\epsilon$
+
+So, put $\delta = \epsilon\quad \square$
+
+\paragraph{3}. Let $n$ be a positive integer and let $P(z)$ and $Q(z)$ be polynomials, where $Q(z_0) \neq 0$.
+Use Theorem 2 in Sec. 16, as well as limits appearing in that section,
+to find
+
+(a) $\lim_{z\rightarrow z_0 \frac{1}{z^n}}\quad (z_0\neq 0)$;
+
+\uwave{slu.}
+$\lim_{z\rightarrow z_0} 1 = 1,$ and $\lim_{z\rightarrow z_0} z^n =
+z_0^n$.
+
+Given $z_0\neq 0 \implies z_0^n \neq 0$ for all positive integers.
+
+By theorem 2.(10) $\lim_{z\rightarrow z_0} \frac{1}{z^n} =
+\frac{1}{z_0^n}\quad \lozenge$
+
+(b) $\lim_{z\rightarrow i \frac{iz^3 - 1}{z + i}}$;
+
+\uwave{slu.}
+
+$\lim_{z\rightarrow i} i = i$  and $\lim_{z\rightarrow i} z^3 = i^3$
+
+By theorem 2.(9)  $\lim_{z\rightarrow i} iz^3 = i*i^3 = 1$
+
+$\lim_{z\rightarrow i} -1 = -1$, so by theorem 2.(8)
+$\lim_{z\rightarrow i} iz^3-1 = 1-1 = 0$.
+
+$\lim_{z\rightarrow i} z = i$, so by theorem 2.(8) $\lim_{z\rightarrow
+  i} z+i = i+i = 2i \neq 0$.
+
+So, by theorem 2.(10) $\lim_{z\rightarrow i} \frac{iz^3 - 1}{z + i} =
+0 \quad \lozenge$
+
+(c) $\lim_{z\rightarrow z_0} \frac{P(z)}{Q(z)} =
+\frac{P(z_0)}{Q(z_0)},$ by repeated applications of theorem 2, we get
+limits of polynomials are evaluations, and
+observing $Q(z_0)\neq 0$ we see the limit exists and is that $\lozenge$
+
+\paragraph{5} Show that the limit of the function
+\[f(z) = (\frac{z}{\bar{z}})^2\]
+
+as $z$ tends to $0$ does not exist. Do this by letting non-zero points
+$z = (x,0)$, and $z = (x,x)$ approach the origin. [Note that it is not sufficient to simply consider points
+$z = (x, 0)$ and $z = (0, y)$, as it was in Example 2, Sec. 15.]
+
+\uwave{slu.}
+
+Let $z = x +0i \implies f(z) = (\frac{x}{x})^2 = 1$, so as
+$x\rightarrow 0,$ $f(x+0i)\rightarrow 1.$
+
+Let $z = x+ix \implies f(z) = (\frac{x+ix}{x-ix})^2=
+(\frac{x(1+i)}{x(1-i)})^2= (\frac{1+i}{1-i})^2 =
+(\frac{1+i}{1-i}\frac{1+i}{1+i})^2 = (\frac{(1+i)^2}{1+1})^2 =
+(\frac{2i}{2})^2 = -1$.
+, so as
+$x+ix\rightarrow 0,$ $f(x+ix)\rightarrow -1.$
+
+If the limit exists it is unique, therefore the limit doesn't exist
+$\square$
+\paragraph{7} 7. Use definition (2), Sec. 15, of limit to prove that
+if $\lim_{z\rightarrow z_0} f(z) = w_0$, then $\lim_{z\rightarrow z_0}
+|f(z)| = |w_0|$
+
+Suggestion: Observe how the first of inequalities (9), Sec. 4, enables
+one to write
+$||f(z)| -|w_0||\leq |f(z)-w_0|$
+
+\uwave{pf.}
+
+$\lim_{z\rightarrow z_0} f(z) = w_0$ means that,
+
+$\forall \epsilon>0:\exists \delta >0:  |z-z_0|< \delta \implies
+|f(z)-w_0|<\epsilon$
+
+by the reverse triangle inequality,
+
+$||f(z)| -|w_0||\leq |f(z)-w_0| <\epsilon$, so we are done, because
+the same $\delta$ works
+$\blacksquare$
+
+\paragraph{10}  Use the theorem in Sec. 17, to show that
+
+(a) $\lim_{z\rightarrow \infty} \frac{4z^2}{(1-z)^2} = 4$;
+
+\uwave{slu.}
+
+$f(z) = \frac{4z^2}{(1-z)^2} =\frac{4z^2}{z^2 -2z +1}\frac{1/z^2}{1/z^2} =
+\frac{4}{1 -\frac{2}{z} +\frac{1}{z^2}}$
+
+$\implies f(1/z) = \frac{4}{1 -\frac{2}{1/z} +\frac{1}{(1/z)^2}} =
+\frac{4}{1 -2z +z^2}$
+
+$\lim_{z\rightarrow 0} f(1/z) = 4$, so by the theorem
+$\lim_{z\rightarrow \infty} f(z) = 4\quad \lozenge$
+
+(b) $\lim_{z\rightarrow 1} \frac{1}{(z-1)^3} = \infty;$
+
+\uwave{slu.}
+
+Consider, $\lim_{z\rightarrow 1} \frac{1}{\frac{1}{(z-1)^3}} = (z-1)^3
+= 0 \implies \lim_{z\rightarrow 1} \frac{1}{(z-1)^3} = \infty$ by the
+theorem in Sec. 17$\quad \lozenge$
+
+(c) $\lim_{z\rightarrow \infty} \frac{z^2+1}{z-1} = \infty;$
+
+\uwave{slu.}
+$f(z)= \frac{z^2+1}{z-1} \implies f(1/z) = \frac{(1/z)^2+1}{(1/z) -1}
+\implies 1/f(1/z) = \frac{(1/z) -1}{1/z^2 +1} =
+\frac{\frac{1-z}{z}}{\frac{1+z^2}{z^2}} =
+\frac{\frac{1-z}{z}}{\frac{1+z^2}{z^2}} = \frac{(1-z)z^2}{(1+z^2)z} =
+\frac{z-z^2}{1+z^2}$
+
+$\lim_{z\rightarrow 0} \frac{z-z^2}{1+z^2} = 0 \implies
+\lim_{z\rightarrow \infty} \frac{z^2+1}{z-1} = \infty \quad \lozenge$
+
+\newpage
+\paragraph{11} With the aid of theorem in Sec. 17, show that when
+
+\[T(z) = \frac{az+b}{cz+d}\quad ad-bc \neq 0,\]
+
+(a) $\lim_{z\rightarrow \infty} T(z) = \infty$ if $c=0$;
+
+\uwave{slu.}
+
+$c = 0 \implies T(z) = \frac{az+b}{d} = \frac{a}{d} z +\frac{b}{d}$
+
+$\implies T(1/z) = \frac{a}{dz} +\frac{b}{d} = \frac{a+bz}{dz}$
+
+$\implies 1/T(1/z) = \frac{dz}{a+bz}$
+
+$\lim_{z\rightarrow 0} \frac{dz}{a+bz} = 0 \implies \lim_{z\rightarrow
+  \infty} T(z) = \infty \quad \lozenge$
+
+(b) $\lim_{z\rightarrow \infty} T(z) = \frac{a}{c}$, and
+$\lim_{z\rightarrow -d/c} T(z) = \infty$ if $c\neq 0$;
+
+\uwave{slu.}
+
+$c\neq 0 \implies T(z) = \frac{az+b}{cz+d}$
+
+$\implies T(1/z) = \frac{a(1/z)+b}{c(1/z)+d}
+=\frac{\frac{a+bz}{z}}{\frac{c+dz}{z}} = \frac{a+bz}{c+dz}$
+
+$\lim_{z\rightarrow 0} T(1/z) = \frac{a}{c} \implies
+\lim_{z\rightarrow \infty} T(z) = \frac{a}{c}.$
+
+$\implies 1/T(z) = \frac{cz+d}{az+b}$
+
+$\implies \lim_{z\rightarrow -d/c} 1/T(z) =
+\frac{c(-d/c)+d}{a(-d/c)+b} = 0,$
+which works because $ad-bc \neq 0 \implies ad \neq bc.$
+
+$\implies \lim_{z\rightarrow -d/c} T(z) = \infty \quad \lozenge$
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
